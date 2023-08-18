@@ -18,13 +18,16 @@ const initialMessage = ''
 const initialEmail = ''
 const initialSteps = 0
 const initialIndex = 4 // the index the "B" is at
+const initialX = 2
+const initialY = 2
 
-const initialState = {
-  message: initialMessage,
-  email: initialEmail,
-  index: initialIndex,
-  steps: initialSteps,
-}
+
+// const initialState = {
+//   message: initialMessage,
+//   email: initialEmail,
+//   index: initialIndex,
+//   steps: initialSteps,
+// }
 
 export default class AppClass extends React.Component {
   // THE FOLLOWING HELPERS ARE JUST RECOMMENDATIONS.
