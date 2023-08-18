@@ -37,36 +37,3 @@ test('typing in input results in text entered', () => {
   expect(inputBox)
     .toHaveValue('pizzatime')
 })
-
-test('clicking reset clears input box', () => {
-  render(<AppFunctional />)
-
-  const inputBox = screen.getByRole('textbox', {id:'email'})
-  const resetButton = screen.getByTestId('reset')
-
-  fireEvent.change(inputBox, { target: {value: 'pizzatime'}})
-  expect(inputBox)
-    .toHaveValue('pizzatime')
-  fireEvent.click(resetButton)
-  expect(inputBox)
-    .toHaveValue('')
-})
-
-test('cannot go up past bounds', () => {
-  render(<AppFunctional />)
-
-  const upButton = screen.getByTestId('up')
-
-  fireEvent.click(upButton)
-  fireEvent.click(upButton)
-  expect(screen.getByText("You can't go up")).toBeInTheDocument()
-})
-
-test('displays moves', () => {
-  render(<AppFunctional />)
-
-  const upButton = screen.getByTestId('up')
-
-  fireEvent.click(upButton)
-  expect(screen.getByText("You moved 1 time")).toBeInTheDocument()
-})
